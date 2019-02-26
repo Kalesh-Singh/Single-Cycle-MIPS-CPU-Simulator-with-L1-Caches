@@ -1,0 +1,25 @@
+/*
+ * Gedare Bloom
+ * Kaleshwar Singh
+ * Mahia Tasneem
+ * Henchhing Limbu
+ * Zaykha Kyaw San
+ * cpu.c
+ *
+ * Implementation of simulated processor.
+ */
+#define ENABLE_L1_CACHES
+
+typedef struct {
+    //uint32_t memory_address;
+    BLOCK data_cache[64];
+    //uint32_t write_buffer;
+}L1_D$;
+
+typedef struct{
+    uint32_t tag_bits;      // 22 bits
+    uint8_t index_bits;     // 6 bits
+    uint8_t byte_offset;    // 4 bits
+    uint8_t valid_bit;      // 1 bit
+    uint8_t dirty_bit;		// 1 bit
+}BLOCK;
